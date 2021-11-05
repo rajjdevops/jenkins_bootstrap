@@ -1,7 +1,4 @@
-#!/usr/bin/env groovy
-
-
-    pipelineJob("folder name/job name") {
+pipelineJob("folder name/job name") {
         description("<h3> this job will create</h3> ")
       
         logRotator {
