@@ -1,15 +1,38 @@
-pipelineJob('shell') {
-  definition {
-    cpsScm {
-      scm {
-        git {
-          remote {
-            url('https://github.com/rajjdevops/jenkins_bootstrap.git')
-          }
-          branch('*/master')
+#!/usr/bin/env groovy
+
+jobDsl scriptText:
+"""
+    pipelineJob("shell") {
+        description("<h3> this job will create</h3> ")
+      
+        logRotator {
+            numTokeep(10)
         }
-      }
-      lightweight()
+
+        properties {
+                      disableConcurrentBuilds()
+        }
+
+        parameters { 
+            choiceParam('DEPLOYMENT_BRANCH', ['new','master'], 'select branch to deploy')
+            
+        }
+  
+        definition {
+            cpsScm {
+                scm {
+                    git {
+                        remote {
+                            url ("https://github.com/rajjdevops/jenkins_bootstrap.git")
+                            
+                      
+                        }
+                        branch('\$DEPLOYMENT_BRANCH')    
+                    }
+                }
+                scriptPath('bucket/Jenkinsfile')
+            }
+        }
+
     }
-  }
-}
+"""
