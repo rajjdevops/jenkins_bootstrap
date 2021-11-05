@@ -1,10 +1,7 @@
 pipeline {
     agent any 
 
-    options {
-        disableConcurrentBuilds()
-        buildDiscarder(logRotater(numToKeeper: '10'))
-    }
+  
 
     stages {
 
