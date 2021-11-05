@@ -25,7 +25,7 @@ pipeline {
                     """
 
                     // poc pipeline
-                    load("jobs/poc/s3bucket.groovy")
+                    load("jobs/bucket/s3bucket.groovy")
                 
                 }
             }
