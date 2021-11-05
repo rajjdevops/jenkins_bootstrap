@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
 
-jobDsl scriptText:
-"""
+
     pipelineJob("folder name/job name") {
         description("<h3> this job will create</h3> ")
       
@@ -34,4 +33,3 @@ jobDsl scriptText:
         }
 
     }
-"""
