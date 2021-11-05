@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-jobDsl scriptText:
+//jobDsl scriptText:
 """
     pipelineJob("shell") {
         description("<h3> this job will create</h3> ")
