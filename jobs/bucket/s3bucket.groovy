@@ -30,7 +30,7 @@
                         branch('\$DEPLOYMENT_BRANCH')    
                     }
                 }
-                scriptPath('bucket/Jenkinsfile')
+                scriptPath('shell/Jenkinsfile')
             }
         }
 
