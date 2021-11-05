@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('executing shell') {
+            steps {
+                sh """
+                  #!/bin/bash
+                  echo "edwin_devops"
+            }
+        }
+    }
+}
