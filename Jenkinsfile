@@ -1,9 +1,7 @@
-//#!/usr/bin/env groovy
+#!/usr/bin/env groovy
 
 pipeline {
     agent any 
-
-   
 
     stages {
 
@@ -13,7 +11,7 @@ pipeline {
 
                     echo 'Loading Jobs'
 
-                    //jobsDsl scriptText:
+                    jobsDsl scriptText:
                     """
                     folder('tech-utils') {
                         description 'Folder contaning various tech utils'
