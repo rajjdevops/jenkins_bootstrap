@@ -1,8 +1,4 @@
-#!/usr/bin/env groovy
-
-//jobDsl scriptText:
-"""
-    pipelineJob("shell") {
+pipelineJob("shell") {
         description("<h3> this job will create</h3> ")
       
         logRotator {
@@ -35,4 +31,3 @@
         }
 
     }
-"""
