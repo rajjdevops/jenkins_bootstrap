@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 pipelineJob("shell") {
         description("<h3> this job will create</h3> ")
       
