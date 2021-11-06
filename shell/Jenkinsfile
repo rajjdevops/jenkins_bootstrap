@@ -6,7 +6,9 @@ pipeline {
             steps {
                 sh """
                   #!/bin/bash
-                  echo "edwin_devops"
+                  echo "edwin_devops
+                  
+                  """
             }
         }
     }
