@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+"""
 pipelineJob("job_4") {
 	description()
 	keepDependencies(false)
@@ -16,3 +18,4 @@ pipelineJob("job_4") {
 	}
 	disabled(false)
 }
+"""
