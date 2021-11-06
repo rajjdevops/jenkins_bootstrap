@@ -25,10 +25,10 @@ pipelineJob("shell") {
                             
                       
                         }
-                        branch('\$DEPLOYMENT_BRANCH')    
+                        branch("\$DEPLOYMENT_BRANCH")    
                     }
                 }
-                scriptPath('shell/Jenkinsfile')
+                scriptPath("shell/Jenkinsfile")
             }
         }
 
