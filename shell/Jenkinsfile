@@ -4,7 +4,9 @@ pipeline {
             stage('echo'){
                 steps{
                     sh """
-                    echo edwinraj
+                      yum install java-1.8.0-openjdk-devel wget -y
+                      yum install git -y 
+                      yum install maven -y
                     """
                 }
             }
