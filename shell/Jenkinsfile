@@ -36,8 +36,8 @@ pipeline {
         stage('copy artifact'){
             steps{
                 sh """
-                
-                cp /myweb/target/myweb-0.12.0.war /opt/war/
+                pwd
+                cp ./target/myweb-0.12.0.war /opt/war/
                 """
             }
         }
