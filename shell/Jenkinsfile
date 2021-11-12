@@ -28,7 +28,7 @@ pipeline {
             steps{
                 sh """
                 cd myweb/
-                
+                mvn clean install
                 """
             }
         }
