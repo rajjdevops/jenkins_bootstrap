@@ -41,5 +41,21 @@ pipeline {
                 """
             }
         }
+        stage('build image'){
+            steps{
+                    sh """
+                    cd myweb/
+                    docker build -t "tommy" .
+                    """
+             }
+         }
+            stage('build container') {
+                steps{
+                      sh """
+                      docker run -it -d --name tomcaty tommy
+                      """
+                }
+            }
+            
     }
 }
