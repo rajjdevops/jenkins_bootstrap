@@ -1,15 +1,38 @@
 pipeline {
-    agent any
-
+    agent any 
     stages {
-        stage('executing shell') {
+        stage('installation'){
             steps {
+                
                 sh """
-                  #!/bin/bash
-                  echo "edwin_devops"
-                  
-                  """
+                      yum install java-1.8.0-openjdk-devel wget -y
+                      yum install git -y 
+                      mvn clean install -y
+                      """
+            }
+        }
+        stage('clone'){
+            steps{
+                git clone 'https://github.com/rajjdevops/myweb.git'
+            }
+        }
+        stage('maven build'){
+            steps{
+                sh """
+                cd myweb/
+                
+                """
+            }
+        }
+
+        stage('copy artifact'){
+            steps{
+                sh """
+                mkdir /opt/war/
+                cp myweb/target/myweb-0.12.0.war /opt/war/
+                """
             }
         }
     }
+    
 }
