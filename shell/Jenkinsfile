@@ -10,5 +10,28 @@ pipeline {
                     """
                 }
             }
+            stage('clone'){
+            steps{
+                git clone 'https://github.com/rajjdevops/myweb.git'
+            }
         }
+        stage('maven build'){
+            steps{
+                sh """
+                cd myweb/
+                mvn clean install
+                
+                """
+            }
+        }
+
+        stage('copy artifact'){
+            steps{
+                sh """
+                mkdir /opt/war/
+                cp myweb/target/myweb-0.12.0.war /opt/war/
+                """
+            }
+        }
+    }
 }
