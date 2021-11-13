@@ -37,14 +37,15 @@ pipeline {
             steps{
                 sh """
                 pwd
-                cp myweb/target/myweb-0.12.0.war /myweb/
+                cp myweb/target/myweb-0.12.0.war /opt/war/
                 """
             }
         }
         stage('build image'){
             steps{
                     sh """
-                    cd myweb/
+                    cp myweb/ /opt/war/
+                    cd opt/war/
                     docker build -t "tomm" .
                     """
              }
