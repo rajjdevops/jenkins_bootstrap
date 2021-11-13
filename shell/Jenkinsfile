@@ -44,7 +44,7 @@ pipeline {
         stage('build image'){
             steps{
                     sh """
-                    cd myweb/
+                    cd /opt/war/
                     docker build -t "tommy" .
                     """
              }
@@ -52,7 +52,7 @@ pipeline {
             stage('build container') {
                 steps{
                       sh """
-                      docker run -it -d --name tomcaty tommy
+                      docker run -it -d --name edwindevops -p 8887:8080 tommy:latest
                       """
                 }
             }
