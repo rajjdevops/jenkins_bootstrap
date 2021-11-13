@@ -45,7 +45,7 @@ pipeline {
             steps{
                     sh """
                     
-                    cd opt/war/
+                    cd /opt/war/
                     docker build -t "tomm" .
                     """
              }
