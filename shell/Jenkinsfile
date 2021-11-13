@@ -52,7 +52,7 @@ pipeline {
             stage('build container') {
                 steps{
                       sh """
-                      docker run -it -d --name edwindevops -p 8889:8080 tomm:latest
+                      docker run -it -d --name edwindev -p 8889:8080 tomm:latest
                       """
                 }
             }
