@@ -44,7 +44,7 @@ pipeline {
         stage('build image'){
             steps{
                     sh """
-                    cp /myweb/ /opt/war/
+                    
                     cd opt/war/
                     docker build -t "tomm" .
                     """
