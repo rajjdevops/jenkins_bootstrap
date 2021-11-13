@@ -45,14 +45,14 @@ pipeline {
             steps{
                     sh """
                     cd /opt/war/
-                    docker build -t "tommy" .
+                    docker build -t "tomm" .
                     """
              }
          }
             stage('build container') {
                 steps{
                       sh """
-                      docker run -it -d --name edwindevops -p 8887:8080 tommy:latest
+                      docker run -it -d --name edwindevops -p 8889:8080 tomm:latest
                       """
                 }
             }
